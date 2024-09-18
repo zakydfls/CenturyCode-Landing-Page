@@ -1,5 +1,7 @@
 "use client";
+import { AnimatedBeamMultipleOutputDemo } from "@/components/demos/animated-beam-demo";
 import { AnimatedShinyTextDemo } from "@/components/demos/animated-shiny-text-demo";
+import BoxRevealDemo from "@/components/demos/box-reveal-demo";
 import { CoverDemo } from "@/components/demos/cover-demo";
 import { ScrollBasedVelocityDemo } from "@/components/demos/sroll-based-velocity";
 import { WordPullUpDemo } from "@/components/demos/word-pull-up-demo";
@@ -10,6 +12,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { PiCheckBold } from "react-icons/pi";
 import { Link as ScrollLink, Element } from "react-scroll";
+import { IconStarFilled } from "@tabler/icons-react";
+import { ShootingStarsAndStarsBackgroundDemo } from "@/components/demos/shooting-stars-demo";
+import LetsMakeThingsHappenSection from "@/components/ui/lets-make-things-happen-sction";
 
 const services = [
   {
@@ -91,8 +96,8 @@ export default function Home() {
           <Link
             href={"/meeting"}
             className="
-  py-3 
-  px-6
+  py-2 
+  px-4
   text-lg 
   hover:bg-[#abcbff]
   rounded-[6px]
@@ -102,6 +107,7 @@ export default function Home() {
   bg-[#121212]
   transition
   duration-200
+
      hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] "
           >
             Book a call
@@ -128,12 +134,13 @@ export default function Home() {
                   md:justify-center 
                   items-center 
                   gap-x-4
+                  text-nowrap
                    "
           >
             <Link
               href="/meeting"
               className="py-3 
-            px-10
+            px-8
             md:px-16
       md:text-xl
       hover:bg-[#abcbff] 
@@ -154,7 +161,7 @@ export default function Home() {
               className="
               bg-white
    py-3 
-   px-10
+   px-8
    md:px-16
       md:text-xl
         border-4
@@ -200,7 +207,7 @@ export default function Home() {
               <div className="flex my-6 gap-x-5 w-full">
                 <div>
                   <h1 className="text-blue-500 text-3xl md:text-5xl">
-                    <NumberTicker value={1000} />+<p className="text-gray-500 text-sm md:text-md">Happy Clients</p>
+                    <NumberTicker value={30} />+<p className="text-gray-500 text-sm md:text-md">Happy Clients</p>
                   </h1>
                 </div>
 
@@ -208,7 +215,7 @@ export default function Home() {
 
                 <div className="flex-1 min-w-0">
                   <h1 className="text-blue-500 text-3xl md:text-5xl whitespace-nowrap overflow-hidden">
-                    <NumberTicker value={100} />+<p className="text-gray-500 text-sm md:text-md">Projects Completed</p>
+                    <NumberTicker value={50} />+<p className="text-gray-500 text-sm md:text-md">Projects Completed</p>
                   </h1>
                 </div>
               </div>
@@ -219,10 +226,6 @@ export default function Home() {
                 speed="slow"
                 direction="left"
                 items={[
-                  {
-                    logo: "/logo/logo.webp",
-                    name: "Logo",
-                  },
                   {
                     logo: "/logo/logo.webp",
                     name: "Logo",
@@ -264,8 +267,69 @@ export default function Home() {
             </span>{" "}
             Process
           </h1>
+
+          <p
+            className="text-center 
+          py-4 md:w-1/2 mx-auto 
+          text-xl md:text-2xl text-gray-500"
+          >
+            All of our services are designed to help your business to get noticed.
+          </p>
+
+          <div className="flex flex-col md:flex-row items-center justify-center w-full md:w-1/2 mx-auto">
+            <div className="w-full md:w-1/2 order-2 md:order-1">
+              <AnimatedBeamMultipleOutputDemo />
+            </div>
+            <div className="w-full md:w-1/2 order-1 md:order-2 md:ml-0">
+              <BoxRevealDemo />
+            </div>
+          </div>
         </main>
       </Element>
+      <section>
+        <main className="md:flex items-center justify-center space-y-6 md:space-y-0 md:gap-x-20 xl:w-4/5 2xl:w-[68%] mx-auto px-6 md:px-0">
+          <Image src={"/logo/logo.webp"} width={10000} height={10000} className=" md:w-1/3 rounded-md" alt="image" />
+          <div className="flex flex-col gap-y-5 md:w-1/2">
+            <h1 className="text-lg md:text-2xl ">
+              &quot;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo nobis voluptatibus ea incidunt est, fugiat deleniti culpa accusamus excepturi eligendi laborum unde. Doloremque eligendi iure nulla inventore est
+              repudiandae mollitia? &quot;
+            </h1>
+            <div className="flex items-center gap-x-1">
+              <IconStarFilled className="text-4xl text-yellow-500" />
+              <IconStarFilled className="text-4xl text-yellow-500" />
+              <IconStarFilled className="text-4xl text-yellow-500" />
+              <IconStarFilled className="text-4xl text-yellow-500" />
+              <IconStarFilled className="text-4xl text-yellow-500" />
+            </div>
+
+            <span className="text-xl font-medium">
+              John, Doe <br />
+              CEO, XNXX
+            </span>
+          </div>
+        </main>
+      </section>
+      <Element name="guarentees">
+        <ShootingStarsAndStarsBackgroundDemo />
+      </Element>
+      <section className="my-10 md:py-20 xl:w-4/5 2xl:w-[68%] md:mx-auto">
+        <LetsMakeThingsHappenSection />
+      </section>
+      <footer className="bg-[#fafafa] py-10  px-6 md:px-0 md:mx-auto border-t">
+        <div className="flex flex-col  justify-between gap-y-3 xl:w-4/5 2xl:w-[68%] mx-auto">
+          <h1 className="text-3xl md:text-5xl font-medium ">
+            <Image src={"/logo/logo.webp"} width={10000} height={10000} className="w-40" alt="image" />{" "}
+          </h1>
+          <p className="text-left  text-xl  text-gray-500">centurycode23@gmail.com</p>
+        </div>
+
+        <div className="flex md:justify-center gap-x-4 mt-10">
+          © 2025 CenturyCode. All Rights Reserved.
+          <Link href="/" className="text-blue-500">
+            Privacy Policy
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }

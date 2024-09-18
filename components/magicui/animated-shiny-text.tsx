@@ -8,13 +8,9 @@ interface AnimatedShinyTextProps {
   shimmerWidth?: number;
 }
 
-const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
-  children,
-  className,
-  shimmerWidth = 100,
-}) => {
+const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({ children, className, shimmerWidth = 100 }) => {
   return (
-    <p
+    <div
       style={
         {
           "--shimmer-width": `${shimmerWidth}px`,
@@ -29,11 +25,11 @@ const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
         // Shimmer gradient
         "bg-gradient-to-r from-transparent via-black/80 via-50% to-transparent  dark:via-white/80",
 
-        className,
+        className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 };
 

@@ -25,10 +25,10 @@ export function AnimatedShinyTextDemo() {
           gap-x-6"
           >
             ⭐ ⭐ ⭐ ⭐ ⭐
-            <div className="flex items-center space-x-2 py-2 md:py-0">
-              {/* <FcGoogle className="h-6 w-6 " /> */}
+            {/* <div className="flex items-center space-x-2 py-2 md:py-0">
+              <FcGoogle className="h-6 w-6 " />
               <span className="text-gray-600 hover:underline cursor-pointer ">4.9 stars 100+ reviews</span>
-            </div>
+            </div> */}
           </div>
         </AnimatedShinyText>
       </div>
